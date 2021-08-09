@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Product;
+use App\Models\Category;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +16,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome', [
+        'products' => Product::latest()->get()
+    ]);
+});
+
+Route::get('products/{product:slug}', function (Product $product) {
+    return view('product', [
+        'product' => $product
+    ]);
 });
