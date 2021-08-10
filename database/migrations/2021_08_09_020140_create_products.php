@@ -21,6 +21,7 @@ class CreateProducts extends Migration
             $table->string('slug')->unique();
             $table->integer('price');
             $table->integer('quantity');
+            $table->string('imageURL');
             $table->timestamps();
         });
     }
