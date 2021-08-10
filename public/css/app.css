@@ -10002,6 +10002,14 @@ h3 {
     border-color: #dee2e6;
   }
 }
+ul {
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
 .icon {
   font-size: 24px;
 }
@@ -10009,4 +10017,5 @@ h3 {
 .footer {
   height: 200px;
   background-color: rgba(61, 61, 61, 0.85);
+  overflow: none;
 }
