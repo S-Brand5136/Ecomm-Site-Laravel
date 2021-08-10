@@ -17,7 +17,7 @@ use App\Models\Category;
 
 Route::get('/', function () {
     return view('welcome', [
-        'products' => Product::latest()->get()
+        'products' => Product::latest()->limit(2)->get()
     ]);
 });
 
