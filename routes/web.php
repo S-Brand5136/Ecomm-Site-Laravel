@@ -26,3 +26,9 @@ Route::get('products/{product:slug}', function (Product $product) {
         'product' => $product
     ]);
 });
+
+Route::get('categories/{category:slug}', function (Category $category) {
+    return view('product', [
+        'posts' => $category->posts
+    ]);
+});
