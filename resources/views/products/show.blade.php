@@ -6,5 +6,6 @@
                 <x-product-card :product="$product" class="mr-md-5 col-xs-2 col-offset-2 " />
             @endforeach
         </div>
+        {{ $products->links() }}
     </div>
 </x-layout>

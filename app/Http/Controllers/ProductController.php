@@ -24,7 +24,7 @@ class ProductController extends Controller
     public function show()
     {
         return view('products.show', [
-            'products' => Product::latest()->paginate(6)
+            'products' => Product::latest()->paginate(4)
         ]);
     }
 }
