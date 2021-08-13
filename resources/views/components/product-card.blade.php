@@ -1,20 +1,24 @@
 @props(['product'])
 
-<article {{ $attributes->merge(['class' => "container-fluid d-xs-block d-md-flex mt-5"]) }}>
-    <div class="container text-align-center d-flex flex-column justify-content-around mb-5">
-        <h1 class="display-1">
-            {{ $product->name }}
-        </h1>
-        <div class="d-flex flex-column justify-content-around">
-            <h3 class="text-muted display-4">{{ $product->description }}</h3>
-            <div class="d-flex flex-column">
-                <h4 class="mt-3 font-weight-bold">Price: <span class="font-weight-bold"></span>${{ ($product->price) / 100 }}</h4>
-                <h4 class="mt-3 font-weight-bold">Stock: <span class="font-weight-bold"></span>{{ ($product->quantity) }}</h4>
+<article {{ $attributes->merge(['class' => "card mb-3"]) }} style="max-width: 640px">
+    <div class="row no-gutters">
+        <div class="col-md-4">
+            <img src="{{ $product->imageURL }}" class="card-img-top" alt="">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h2 class="card-title">
+                    {{ $product->name }}
+                </h2>
+                <p class="card-text">{{ $product->description }}</p>
+                <div class="d-flex flex-row justify-content-around">
+                    <p class="card-text text-muted">Price: <span class="font-weight-bold"></span>${{ ($product->price) / 100 }}</p>
+                    <p class="card-text text-muted">Stock: <span class="font-weight-bold"></span>{{ ($product->quantity) }}</p>
+                </div>
+                <div class="d-flex flex-row">
+                    <a href="products/{{ $product->slug }}" class="btn-block btn btn-primary mt-3">Learn more</a>
+                </div>
             </div>
         </div>
-        <a href="products/{{ $product->slug }}" class="btn btn-primary mt-2 p-3">Shop Now</a>
-    </div>
-    <div class="ml-md-5 border-0">
-        <img src="{{ $product->imageURL }}" class="card-img img-fluid" alt="">
     </div>
 </article>

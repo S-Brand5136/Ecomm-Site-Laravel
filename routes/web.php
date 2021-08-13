@@ -23,7 +23,7 @@ Route::get('/', function () {
 
 Route::get('products', function () {
     return view('products', [
-        'product' => Product::latest()->get()
+        'products' => Product::all()
     ]);
 });
 
