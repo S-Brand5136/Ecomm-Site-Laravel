@@ -1,5 +1,7 @@
 <x-layout>
-    <section class="container-fluid d-xs-block flex-row d-md-flex mt-5">
+    <x-product-feature-card :product="$product" class="flex-row" />
+
+    {{-- <section class="container-fluid d-xs-block flex-row d-md-flex mt-5">
         <div class="container text-align-center d-flex flex-column justify-content-around mb-5">
             <h1 class="display-3 text-uppercase font-weight-bold">
                 <ins>{{ $product->name }}</ins>
@@ -16,5 +18,5 @@
         <div class="ml-md-5 border-0">
             <img src="{{ $product->imageURL }}" class="card-img img-fluid" alt="">
         </div>
-    </section>
+    </section> --}}
 </x-layout>

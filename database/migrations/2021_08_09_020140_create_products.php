@@ -23,6 +23,7 @@ class CreateProducts extends Migration
             $table->integer('quantity');
             $table->string('imageURL');
             $table->timestamps();
+            $table->timestamp(('published_at'))->nullable();
         });
     }
 
