@@ -2,7 +2,7 @@
     <h2>Search our Clothing Line!</h2>
     <div class="row justify-content-center align-items-center">
         <div class="col-xs-6 col-md-6 mt-3">
-            <x-drop-down />
+            <x-category-drop-down />
         </div>
 
         <div class="col-xs-6 col-md-6 mt-3">

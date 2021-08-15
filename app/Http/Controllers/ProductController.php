@@ -23,7 +23,7 @@ class ProductController extends Controller
     public function show()
     {
         return view('products.show', [
-            'products' => Product::latest()->filter(request(['search']))->paginate(4)->withQueryString()
+            'products' => Product::latest()->filter(request(['search', 'category']))->paginate(4)->withQueryString()
         ]);
     }
 }
