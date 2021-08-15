@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
@@ -24,7 +23,7 @@ class ProductController extends Controller
     public function show()
     {
         return view('products.show', [
-            'products' => Product::latest()->paginate(4)
+            'products' => Product::latest()->filter(request(['search']))->paginate(4)->withQueryString()
         ]);
     }
 }

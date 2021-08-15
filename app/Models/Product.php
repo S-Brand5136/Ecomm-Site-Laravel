@@ -9,6 +9,15 @@ class Product extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
+    public function scopeFilter($query, array $filters)
+    {
+        $query->when($filters['search'] ?? false, fn ($query, $search) =>
+        $query->where(fn ($query) =>
+        $query->where('name', 'like', '%' . $search . '%')));
+    }
+
     public function category()
     {
         return $this->belongsTo(Category::class);

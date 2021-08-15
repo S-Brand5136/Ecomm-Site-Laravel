@@ -18,7 +18,7 @@ use App\Models\Category;
 
 // Product Routes
 Route::get('/', [ProductController::class, 'home'])->name('home');
-Route::get('products', [ProductController::class, 'show']);
+Route::get('/products', [ProductController::class, 'show']);
 Route::get('products/{product:slug}', [ProductController::class, 'index']);
 
 
