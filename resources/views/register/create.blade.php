@@ -13,7 +13,7 @@
                     <input type="email" id="email" class="form-control">
 
                     @error('email')
-                        <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                        <p class="text-danger mt-1">{{ $message }}</p>
                     @enderror
                 </div>
             </div>
@@ -25,7 +25,7 @@
                 </div>
 
                 @error('name')
-                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                    <p class="text-danger mt-1">{{ $message }}</p>
                 @enderror
             </div>
 
@@ -35,7 +35,7 @@
                     <input type="password" id="password" class="form-control">
                     <small class="form-text text-muted">Passwords must be minimum of 5 characters</small>
                     @error('password')
-                        <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                        <p class="text-danger mt-1">{{ $message }}</p>
                     @enderror
                 </div>
             </div>
