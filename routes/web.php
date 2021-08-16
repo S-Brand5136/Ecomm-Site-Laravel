@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Product;
 use App\Models\Category;
@@ -21,6 +22,9 @@ Route::get('/', [ProductController::class, 'home'])->name('home');
 Route::get('/products', [ProductController::class, 'show']);
 Route::get('products/{product:slug}', [ProductController::class, 'index']);
 
+// Auth Routes
+Route::get('/register', [RegisterController::class, 'create']);
+Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('categories/{category:slug}', function (Category $category) {
     return view('product', [
@@ -30,10 +34,6 @@ Route::get('categories/{category:slug}', function (Category $category) {
 
 Route::get('login', function () {
     return view('login');
-});
-
-Route::get('signup', function () {
-    return view('signup');
 });
 
 Route::get('about', function () {
