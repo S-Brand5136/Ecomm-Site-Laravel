@@ -27,7 +27,7 @@
                     <a href="/login" class="nav-link">Login</a>
                 </li>
                 <li class="nav-item d-lg-none d-xl-none">
-                    <a href="/signup" class="nav-link">Sign Up</a>
+                    <a href="/register" class="nav-link">Register</a>
                 </li>
                 <li class="nav-item d-lg-none d-xl-none">
                   <a class="nav-link" href="/cart"><i class="fas text-dark fa-shopping-cart mr-2"></i>Cart</a>
@@ -39,7 +39,7 @@
                 <a href="/login" class="nav-link">Login</a>
             </li>
             <li class="nav-item">
-                <a href="/signup" class="nav-link">Sign Up</a>
+                <a href="/register" class="nav-link">Register</a>
             </li>
             <li class="nav-item">
                 <a href="/cart" class="nav-link"><i class="fas fa-shopping-cart text-dark icon mr-2"></i>Cart</a>
