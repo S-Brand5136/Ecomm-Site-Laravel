@@ -5,10 +5,16 @@
 
     <div class="container-fluid p-5 mx-auto justify-content-center mb-5">
         <form action="POST" method="/register" class="justify-content-center">
+            @csrf
+
             <div class="row justify-content-center">
                 <div class="form-group col-md-5 justify-content-center">
                     <label for="email">Email Address</label>
                     <input type="email" id="email" class="form-control">
+
+                    @error('email')
+                        <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                    @enderror
                 </div>
             </div>
 
@@ -17,6 +23,10 @@
                     <label for="name">Username</label>
                     <input type="text" id="name" class="form-control">
                 </div>
+
+                @error('name')
+                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                @enderror
             </div>
 
             <div class="row justify-content-center">
@@ -24,6 +34,9 @@
                     <label for="password">Password</label>
                     <input type="password" id="password" class="form-control">
                     <small class="form-text text-muted">Passwords must be minimum of 5 characters</small>
+                    @error('password')
+                        <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                    @enderror
                 </div>
             </div>
 
