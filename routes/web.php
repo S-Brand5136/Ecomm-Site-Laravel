@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SessionsController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Product;
 use App\Models\Category;
@@ -23,8 +24,8 @@ Route::get('/products', [ProductController::class, 'show']);
 Route::get('products/{product:slug}', [ProductController::class, 'index']);
 
 // Auth Routes
-Route::get('/register', [RegisterController::class, 'create']);
-Route::post('/register', [RegisterController::class, 'store']);
+Route::get('/register', [RegisterController::class, 'create'])->middleware('guest');
+Route::post('/register', [RegisterController::class, 'store'])->middleware('guest');
 
 Route::get('categories/{category:slug}', function (Category $category) {
     return view('product', [
@@ -32,9 +33,10 @@ Route::get('categories/{category:slug}', function (Category $category) {
     ]);
 });
 
-Route::get('login', function () {
-    return view('login');
-});
+Route::get('login', [SessionsController::class, 'create'])->middleware('guest');
+Route::post('login', [SessionsController::class, 'create'])->middleware('guest');
+
+Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');
 
 Route::get('about', function () {
     return view('about');
