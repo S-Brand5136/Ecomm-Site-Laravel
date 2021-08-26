@@ -24,8 +24,8 @@ Route::get('/products', [ProductController::class, 'show']);
 Route::get('products/{product:slug}', [ProductController::class, 'index']);
 
 // Auth Routes
-Route::get('/register', [RegisterController::class, 'create'])->middleware('guest');
-Route::post('/register', [RegisterController::class, 'store'])->middleware('guest');
+Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
+Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
 
 Route::get('categories/{category:slug}', function (Category $category) {
     return view('product', [
