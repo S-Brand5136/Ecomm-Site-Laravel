@@ -21,8 +21,8 @@
                     Categories
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Mens Clothing</a>
-                    <a class="dropdown-item" href="#">Womens Clothing</a>
+                    <a class="dropdown-item" href="/products/?category=Mens Clothing">Mens Clothing</a>
+                    <a class="dropdown-item" href="/products/?category=Womens Clothing">Womens Clothing</a>
                 </div>
             </li>
             @auth
