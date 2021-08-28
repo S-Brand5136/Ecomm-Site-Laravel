@@ -4,13 +4,14 @@
     <p class="d-flex justify-content-center mt-3 text-muted">Continue shopping from wherever you left off!</p>
 
     <div class="container-fluid p-5 mx-auto justify-content-center mb-5">
-        <form action="POST" method="/login" class="justify-content-center">
+        <form action="/login" method="POST" class="justify-content-center">
             @csrf
 
             <div class="row justify-content-center">
                 <div class="form-group col-md-5 justify-content-center">
                     <label for="email">Email Address</label>
-                    <input type="email" id="email" class="form-control">
+                    <input type="email" name='email' required value="{{ old('email') }}" id="email"
+                        class="form-control">
 
                     @error('email')
                         <p class="text-danger mt-1">{{ $message }}</p>
@@ -21,8 +22,10 @@
             <div class="row justify-content-center">
                 <div class="form-group col-md-5">
                     <label for="password">Password</label>
-                    <input type="password" id="password" class="form-control">
+                    <input type="password" id="password" name="password" required value="{{ old('password') }}"
+                        class="form-control">
                     <small class="form-text text-muted">Passwords must be minimum of 5 characters</small>
+
                     @error('password')
                         <p class="text-danger mt-1">{{ $message }}</p>
                     @enderror

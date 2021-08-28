@@ -10,7 +10,8 @@
             <div class="row justify-content-center">
                 <div class="form-group col-md-5 justify-content-center">
                     <label for="email">Email Address</label>
-                    <input type="email" id="email" value="{{ old('email') }}" class="form-control">
+                    <input type="email" id="email" name="email" required value="{{ old('email') }}"
+                        class="form-control">
 
                     @error('email')
                         <p class="text-danger mt-1">{{ $message }}</p>
@@ -21,7 +22,7 @@
             <div class="row justify-content-center">
                 <div class="form-group col-md-5">
                     <label for="name">Username</label>
-                    <input type="text" id="name" value="{{ old('name') }}" class="form-control">
+                    <input type="text" id="name" name="name" required value="{{ old('name') }}" class="form-control">
                     @error('name')
                         <p class="text-danger mt-1">{{ $message }}</p>
                     @enderror
@@ -31,7 +32,7 @@
             <div class="row justify-content-center">
                 <div class="form-group col-md-5">
                     <label for="password">Password</label>
-                    <input type="password" id="password" class="form-control">
+                    <input type="password" id="password" name="password" required class="form-control">
                     <small class="form-text text-muted">Passwords must be minimum of 5 characters</small>
                     @error('password')
                         <p class="text-danger mt-1">{{ $message }}</p>

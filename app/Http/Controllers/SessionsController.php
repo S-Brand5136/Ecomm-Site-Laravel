@@ -16,15 +16,15 @@ class SessionsController extends Controller
     public function store()
     {
         $attributes = request()->validate([
-            'email' => 'required|email',
-            'password' => 'required'
+            'email' => ['required', 'email'],
+            'password' => ['required']
         ]);
 
         if (Auth::attempt($attributes)) {
             session()->regenerate();
             // Session fixation
 
-            return redirect('/')->with('sucess', 'Welcome Back!');
+            return redirect('/');
         }
 
         return back()
@@ -37,6 +37,6 @@ class SessionsController extends Controller
     {
         Auth::logout();
 
-        return redirect('/')->with('sucess', 'Goodbye');
+        return redirect('/');
     }
 }
