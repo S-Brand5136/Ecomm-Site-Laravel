@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
@@ -41,3 +42,6 @@ Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth'
 
 // About route
 Route::get('about', [AboutController::class, 'index']);
+
+// Cart Routes
+Route::get('cart', [CartController::class, 'create']);
