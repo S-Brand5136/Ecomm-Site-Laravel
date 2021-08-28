@@ -27,13 +27,15 @@
             </li>
             @auth
 
-                <span class="font-bold">Welcome Back! {{ auth()->user()->name() }}</span>
+                <li class="nav-item d-lg-none d-xl-none">
+                    <span class="font-bold nav-link">Welcome Back! {{ Auth::user()->name }}</span>
+                </li>
 
                 <li class="nav-item d-lg-none d-xl-none">
                     <form action="/logout" method="POST">
                         @csrf
 
-                        <button type="submit" class="nav-link">Logout</button>
+                        <button class="btn btn-dark" type="submit" class="nav-link">Logout</button>
                     </form>
                 </li>
 
@@ -51,12 +53,28 @@
         </ul>
     </div>
     <ul class="navbar-nav d-none d-lg-flex d-xl-flex d-md-none">
-        <li class="nav-item">
-            <a href="/login" class="nav-link">Login</a>
-        </li>
-        <li class="nav-item">
-            <a href="/register" class="nav-link">Register</a>
-        </li>
+        @auth
+
+            <li class="nav-item d-flex justify-content-center mr-2">
+                <span class="font-bold nav-link">Welcome Back! {{ Auth::user()->name }}</span>
+            </li>
+
+            <li class="nav-item mr-2">
+                <form action="/logout" method="POST">
+                    @csrf
+                    <button class="btn btn-dark" type="submit" class="nav-link">Logout</button>
+                </form>
+            </li>
+
+        @else
+
+            <li class="nav-item">
+                <a href="/login" class="nav-link">Login</a>
+            </li>
+            <li class="nav-item">
+                <a href="/register" class="nav-link">Register</a>
+            </li>
+        @endauth
         <li class="nav-item">
             <a href="/cart" class="nav-link"><i class="fas fa-shopping-cart text-dark icon mr-2"></i>Cart</a>
         </li>
