@@ -5,8 +5,12 @@
         </header>
 
         <section class="row justify-content-center mt-5">
-            <x-shopping-cart-table />
-            <x-shopping-cart-total />
+            @auth
+                <x-shopping-cart-table />
+                <x-shopping-cart-total />
+            @else
+                <x-cart-guest />
+            @endauth
         </section>
     </main>
 </x-layout>
