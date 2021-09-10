@@ -1,3 +1,5 @@
+@props(['items'])
+
 <div class="card col-sm-12 col-md-7">
     <div class="card-body">
         <div class="card-title font-weight-bolder">Shopping Cart</div>

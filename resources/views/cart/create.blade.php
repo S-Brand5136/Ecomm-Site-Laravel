@@ -6,7 +6,7 @@
 
         <section class="row justify-content-center mt-5">
             @auth
-                <x-shopping-cart-table />
+                <x-shopping-cart-table :items='$cartItems' />
                 <x-shopping-cart-total />
             @else
                 <x-cart-guest />
