@@ -9,7 +9,9 @@ class CartController extends Controller
 {
     public function create()
     {
-        return view('cart.create');
+        return view('cart.create', [
+            'cartItems' => Cart::content()
+        ]);
     }
 
     public function shop($product_id, $product_name, $product_price)
