@@ -45,4 +45,4 @@ Route::get('about', [AboutController::class, 'index']);
 
 // Cart Routes
 Route::get('cart', [CartController::class, 'create']);
-Route::post('cart', [CartController::class, 'shop']);
+Route::post('cart', [CartController::class, 'shop'])->middleware('auth');
