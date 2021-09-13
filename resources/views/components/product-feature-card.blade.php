@@ -17,14 +17,21 @@ if (strpos(Request::url(), 'products')) {
             <div class="d-flex flex-column">
                 <h4 class="mt-3 font-weight-bold">Price: <span
                         class="font-weight-bold"></span>${{ $product->price / 100 }}</h4>
-                <h4 class="mt-3 font-weight-bold">Stock: <span
-                        class="font-weight-bold"></span>{{ $product->quantity }}</h4>
+                <h4 class="mt-3 font-weight-bold">Stock: <span class="font-weight-bold"></span>{{ $product->quantity }}
+                </h4>
             </div>
             <h4 class="font-weight-bold"><small class="text-muted">Posted:
                     {{ $product->created_at->diffForHumans() }}</small></h4>
         </div>
-        <a href="products/{{ $product->slug }}"
-            class="btn btn-primary mt-2 p-3 {{ $product->quantity <= 0 ? 'disabled' : '' }} ">{{ $product->quantity <= 0 ? 'Out Of Stock' : $buttonText }}</a>
+        @if (str_contains($buttonText, 'Add To Cart') === true)
+            <form action="/cart" method="POST">
+                <button href="products/{{ $product->slug }}"
+                    class="btn btn-primary mt-2 p-3 btn-block {{ $product->quantity <= 0 ? 'disabled' : '' }} ">{{ $product->quantity <= 0 ? 'Out Of Stock' : $buttonText }}</button>
+            </form>
+        @else
+            <a href="products/{{ $product->slug }}"
+                class="btn btn-primary mt-2 p-3 {{ $product->quantity <= 0 ? 'disabled' : '' }} ">{{ $product->quantity <= 0 ? 'Out Of Stock' : $buttonText }}</a>
+        @endif
     </div>
     <div class="ml-md-5 border-0">
         <img src="{{ $product->imageURL }}" class="card-img img-fluid" alt="">
