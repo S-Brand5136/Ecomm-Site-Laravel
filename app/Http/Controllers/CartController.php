@@ -14,9 +14,11 @@ class CartController extends Controller
         ]);
     }
 
-    public function shop($product_id, $product_name, $product_price)
+    public function shop()
     {
-        Cart::add($product_id, $product_name, $product_price)->associate('App\Models\Products');
-        return redirect()->view('cart.create');
+        $attributes = request()->all();
+
+        Cart::add($attributes);
+        return redirect('cart');
     }
 }
