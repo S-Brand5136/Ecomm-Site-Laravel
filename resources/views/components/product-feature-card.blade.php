@@ -25,7 +25,12 @@ if (strpos(Request::url(), 'products')) {
         </div>
         @if (str_contains($buttonText, 'Add To Cart') === true)
             <form action="/cart" method="POST">
-                <button href="products/{{ $product->slug }}"
+                @csrf
+                <input type="hidden" value="{{ $product->id }}" name="id">
+                <input type="hidden" value="{{ $product->name }}" name="name">
+                <input type="hidden" value="{{ $product->price }}" name="price">
+                <input type="hidden" value="1" name="qty">
+                <button
                     class="btn btn-primary mt-2 p-3 btn-block {{ $product->quantity <= 0 ? 'disabled' : '' }} ">{{ $product->quantity <= 0 ? 'Out Of Stock' : $buttonText }}</button>
             </form>
         @else
