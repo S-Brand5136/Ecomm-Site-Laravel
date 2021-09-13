@@ -5,17 +5,17 @@
     <div class="card-body">
         <div class="row p-2">
             <p class="col-sm-6 h5 font-weight-bold">Sub-total:</p>
-            <p class="col-sm-6 h5 font-weight-bold">$19.99</p>
+            <p class="col-sm-6 h5 font-weight-bold">${{ Cart::subtotal() }}</p>
         </div>
 
         <div class="row mt-2 p-2 border-top">
             <p class="col-sm-6 h5 font-weight-bold">Tax:</p>
-            <p class="col-sm-6 h5 font-weight-bold">$4.64</p>
+            <p class="col-sm-6 h5 font-weight-bold">${{ Cart::tax() }}</p>
         </div>
 
         <div class="row mt-2 p-2 border-top">
             <p class="col-sm-6 h5 font-weight-bold">Total:</p>
-            <p class="col-sm-6 h5 font-weight-bold">$24.63</p>
+            <p class="col-sm-6 h5 font-weight-bold">${{ Cart::total() }}</p>
         </div>
 
         <div class="row mt-2 p-2 border">

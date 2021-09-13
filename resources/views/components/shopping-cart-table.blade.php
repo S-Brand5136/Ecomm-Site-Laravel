@@ -14,13 +14,15 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">small image</th>
-                    <th>T-Shirt</th>
-                    <th>1</th>
-                    <th>$19.99</th>
-                    <th><button class="badge border-0 badge-danger text-wrap">X</button></th>
-                </tr>
+                @foreach ($items as $item)
+                    <tr>
+                        <th></th>
+                        <th>{{ $item->name }}</th>
+                        <th>{{ $item->qty }}</th>
+                        <th>{{ $item->price / 100 }}</th>
+                        <th><button class="badge border-0 badge-danger text-wrap">X</button></th>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
