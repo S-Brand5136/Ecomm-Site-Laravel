@@ -2,7 +2,8 @@
 
 return [
 
-    'key' => env('APP_KEY', 'SomeThingRandom'),
+    'key' => env('APP_KEY', 'GlW+fUy+1RSCvARQStZEe+zdUaAiB++5TVdkoPYvTwc=
+    '),
 
     /*
     |--------------------------------------------------------------------------
