@@ -14,6 +14,13 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.3"
     },
+    "replace": {
+        "symfony/polyfill-php54": "*",
+        "symfony/polyfill-php55": "*",
+        "symfony/polyfill-php56": "*",
+        "symfony/polyfill-php70": "*",
+        "symfony/polyfill-mbstring": "*"
+    },
     "require-dev": {
         "fakerphp/faker": "^1.9.2",
         "facade/ignition": "^2.5",
